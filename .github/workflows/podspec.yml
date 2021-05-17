@@ -1,0 +1,20 @@
+name: Podspec
+
+on:
+  push:
+    tags:
+      - v*
+
+jobs:
+  lint:
+    name: "CocoaPods Spec Test"
+    runs-on: macOS-latest
+
+    steps:
+      - uses: actions/checkout@v2
+      - name: Select Xcode 12
+        run: sudo xcode-select -s /Applications/Xcode_12.4.app
+      - name: Test Specs
+        run: |
+          export CI=1
+          pod lib lint --verbose --no-clean --swift-version=5.3 --allow-warnings DonkeyLockKit.podspec
