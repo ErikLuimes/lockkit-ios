@@ -1,0 +1,2 @@
+*.bcsymbolmap -diff
+dSYMs/**/* -diff
