@@ -1,5 +1,9 @@
 # Changelog
 
+## v0.1.2 - 2021-05-19
+
+* Test release to verify automation pipeline
+
 ## v0.1.1 - 2021-05-17
 
 * Add more verbose debug logging
