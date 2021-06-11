@@ -43,9 +43,10 @@ extension NSRecursiveLock {
   }
 }
 public struct LockKitConfiguration {
-  public init(logLevel: DonkeyLockKit.LockKit.LogLevel)
+  public init(logLevel: DonkeyLockKit.LockKit.LogLevel, environment: DonkeyLockKit.LockKit.ServerEnvironment)
   public static let `default`: DonkeyLockKit.LockKitConfiguration
   public let logLevel: DonkeyLockKit.LockKit.LogLevel
+  public let environment: DonkeyLockKit.LockKit.ServerEnvironment
 }
 public typealias LockName = Swift.String
 @_hasMissingDesignatedInitializers public class LockKit {
@@ -72,23 +73,27 @@ extension LockKit {
     case extraLockCheck
     public static func == (a: DonkeyLockKit.LockKit.StatusUpdate, b: DonkeyLockKit.LockKit.StatusUpdate) -> Swift.Bool
   }
-  public enum InitializeSDKError : Swift.Error {
+  public enum InitializeSDKError : Swift.String, Swift.Error, Swift.Equatable {
     case tokenNotSet
     case tokenInvalid
-    public static func == (a: DonkeyLockKit.LockKit.InitializeSDKError, b: DonkeyLockKit.LockKit.InitializeSDKError) -> Swift.Bool
-    public func hash(into hasher: inout Swift.Hasher)
-    public var hashValue: Swift.Int {
+    case ongoingInitializationWithDifferentToken
+    case failedToInitializeStorage
+    public init?(rawValue: Swift.String)
+    public typealias RawValue = Swift.String
+    public var rawValue: Swift.String {
       get
     }
   }
-  public enum InitializeLockError : Swift.Error {
+  public enum InitializeLockError : Swift.Error, Swift.Equatable {
     case failedToInitializeSDK(DonkeyLockKit.LockKit.InitializeSDKError)
     case ongoingLockAction
+    public static func == (a: DonkeyLockKit.LockKit.InitializeLockError, b: DonkeyLockKit.LockKit.InitializeLockError) -> Swift.Bool
   }
-  public enum FinalizeLockError : Swift.Error {
+  public enum FinalizeLockError : Swift.Error, Swift.Equatable {
     case failedToInitializeSDK(DonkeyLockKit.LockKit.InitializeSDKError)
     case ongoingLockAction
     case lockNotRecognized
+    public static func == (a: DonkeyLockKit.LockKit.FinalizeLockError, b: DonkeyLockKit.LockKit.FinalizeLockError) -> Swift.Bool
   }
   public enum LockError : Swift.Error, Swift.Equatable {
     case failedToInitializeSDK(DonkeyLockKit.LockKit.InitializeSDKError)
@@ -106,12 +111,25 @@ extension LockKit {
     case invalidCommand
     case outOfCommands
     case fullTimeout
+    case offlineDuringPickup
     public static func == (a: DonkeyLockKit.LockKit.LockError, b: DonkeyLockKit.LockKit.LockError) -> Swift.Bool
   }
 }
 public struct CasePath<Root, Value> {
 }
 public func _unimplemented(_ function: Swift.StaticString, file: Swift.StaticString = #file, line: Swift.UInt = #line) -> Swift.Never
+extension LockKit {
+  public enum ServerEnvironment : Swift.Equatable {
+    case live
+    case test
+    public func hash(into hasher: inout Swift.Hasher)
+    public static func == (a: DonkeyLockKit.LockKit.ServerEnvironment, b: DonkeyLockKit.LockKit.ServerEnvironment) -> Swift.Bool
+    public var hashValue: Swift.Int {
+      get
+    }
+  }
+}
 extension DonkeyLockKit.LockKit.LogLevel : Swift.Hashable {}
-extension DonkeyLockKit.LockKit.InitializeSDKError : Swift.Equatable {}
 extension DonkeyLockKit.LockKit.InitializeSDKError : Swift.Hashable {}
+extension DonkeyLockKit.LockKit.InitializeSDKError : Swift.RawRepresentable {}
+extension DonkeyLockKit.LockKit.ServerEnvironment : Swift.Hashable {}

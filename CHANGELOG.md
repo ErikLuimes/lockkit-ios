@@ -1,5 +1,13 @@
 # Changelog
 
+## v0.2.0
+
+* Require the first unlock to be performed while online.
+* Add `LockKitConfiguration.environment` to select between live and test
+  environment.
+* Ensure that Donkey Lock Kit storage is properly cleared in the event
+  of the host app reinstallation.
+
 ## v0.1.3 - 2021-05-31
 
 * Fixed a memory leak occurring when calling lock/unlock/endRental
