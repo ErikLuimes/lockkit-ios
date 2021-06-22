@@ -1,6 +1,23 @@
 # Changelog
 
-## v0.2.0
+## v0.3.0 - 2021-06-22
+
+### API Changes
+
+* (Renamed) `LockKit.initializeLock(lockName:eKey:commands:)`
+  -> `LockKit.initializeLock(lockName:eKey:passkey:)`. It now takes a single
+  string as `passkey`, instead of a list of strings, and manages commands
+  parsing internally.
+* (Renamed) `LockKit` namespace was removed from the following enums and structs:
+  - `ServerEnvironment`
+  - `LogLevel`
+  - `StatusUpdate`
+  - `InitializeSDKError`
+  - `InitializeLockError`
+  - `FinalizeLockError`
+  - `LockError`
+
+## v0.2.0 - 2021-06-11
 
 * Require the first unlock to be performed while online.
 * Add `LockKitConfiguration.environment` to select between live and test
