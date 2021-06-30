@@ -1,5 +1,14 @@
 # Changelog
 
+## v0.4.0 - 2021-06-30
+
+### API Changes
+
+* (Renamed) `LockKit.endRental(lockName:onStatusChanged:onResult:)` ->
+  `LockKit.prepareEndRental(lockName:onStatusChanged:onResult:)` to clearly
+  indicate that the method does not actually end a rental.
+* (Removed) `LockError.invalidCommand` which at this time wasn't reported at all.
+
 ## v0.3.0 - 2021-06-22
 
 ### API Changes

@@ -100,5 +100,5 @@ bike locks. Consult the API reference for the relevant documentation of:
 * `LockKit.initializeLock(lockName:eKey:passkey:)`
 * `LockKit.unlock(lockName:onStatusChanged:onResult:)`
 * `LockKit.lock(lockName:onStatusChanged:onResult:)`
-* `LockKit.endRental(lockName:onStatusChanged:onResult:)`
+* `LockKit.prepareEndRental(lockName:onStatusChanged:onResult:)`
 * `LockKit.finalizeLock(lockName:)`
