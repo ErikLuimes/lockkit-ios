@@ -81,7 +81,7 @@ using `LockKit.shared` singleton.
 
 ### Initialization
 
-In order to interact with bike locks, you must intialize the SDK with the API
+In order to interact with bike locks, you must intialize the SDK with the SDK authorization
 token provided to you by Donkey Republic:
 
     LockKit.shared.initializeSDK(apiToken: "MyDonkeyToken", errorHandler: { (error) in
