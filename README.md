@@ -79,20 +79,20 @@ The Donkey Lock Kit framework exposes the `LockKit` class, that handles all the
 interaction with Donkey Republic bike locks. In your integration you will be
 using `LockKit.shared` singleton.
 
-### Initialization
+### SDK Initialization
 
 In order to interact with bike locks, you must intialize the SDK with the SDK authorization
 token provided to you by Donkey Republic:
 
-    LockKit.shared.initializeSDK(apiToken: "MyDonkeyToken", errorHandler: { (error) in
-        print("Failed to initialize DonkeyLockKit: \(error)")
+    LockKit.shared.initializeSDK(apiToken: "MyDonkeyToken", onResult: { (result) in
+        // handle result
     })
 
-This call returns immediately. In case you provided an invalid token, the
-`errorHandler` would be called with a relevant error. Otherwise, you're
-authorized to access locks API.
+This call returns immediately. The `onResult` callback indicates whether the initialization
+was successful. In case you provided an invalid token, the callback would be called with
+a relevant error. Otherwise it's called with a success and you're authorized to access locks API.
 
-### Unlocking and locking
+### Working with bike locks
 
 Donkey Lock Kit provides simple, completion-handler-based API for operating
 bike locks. Consult the API reference for the relevant documentation of:

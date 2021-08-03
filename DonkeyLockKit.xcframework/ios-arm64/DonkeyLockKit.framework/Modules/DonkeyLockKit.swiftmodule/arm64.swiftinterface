@@ -50,7 +50,7 @@ public typealias LockName = Swift.String
 @_hasMissingDesignatedInitializers public class LockKit {
   public static let shared: DonkeyLockKit.LockKit
   public func configure(_ configuration: DonkeyLockKit.LockKitConfiguration)
-  public func initializeSDK(apiToken: Swift.String, errorHandler: @escaping (DonkeyLockKit.InitializeSDKError) -> Swift.Void)
+  public func initializeSDK(apiToken: Swift.String, onResult: @escaping (Swift.Result<Swift.Void, DonkeyLockKit.InitializeSDKError>) -> Swift.Void)
   public func initializeLock(lockName: DonkeyLockKit.LockName, eKey: Swift.String, passkey: Swift.String) -> Swift.Result<Swift.Void, DonkeyLockKit.InitializeLockError>
   public func unlock(lockName: DonkeyLockKit.LockName, onStatusChanged: @escaping (DonkeyLockKit.StatusUpdate) -> Swift.Void, onResult: @escaping (Swift.Result<Swift.Void, DonkeyLockKit.LockError>) -> Swift.Void)
   public func lock(lockName: DonkeyLockKit.LockName, onStatusChanged: @escaping (DonkeyLockKit.StatusUpdate) -> Swift.Void, onResult: @escaping (Swift.Result<Swift.Void, DonkeyLockKit.LockError>) -> Swift.Void)

@@ -1,5 +1,14 @@
 # Changelog
 
+## v0.5.0 - 2021-08-03
+
+### API Changes
+
+* `StatusUpdate.waitingForUserAction` is not called when unlocking. This was
+  here to support old lock hardware that is no longer in use.
+* Improved `LockKit.initializeSDK(apiToken:)` by using a full `onResult` handler
+  instead of just an error handler.
+
 ## v0.4.0 - 2021-06-30
 
 ### API Changes
