@@ -1,5 +1,9 @@
 # Changelog
 
+## v0.5.1 - 2021-08-13
+
+* Change the minimum iOS requirement to 11.0
+
 ## v0.5.0 - 2021-08-03
 
 ### API Changes
