@@ -1,5 +1,9 @@
 # Changelog
 
+## v0.5.2 - 2021-08-19
+
+* Fix "Unauthorized Bluetooth use" error reporting
+
 ## v0.5.1 - 2021-08-13
 
 * Change the minimum iOS requirement to 11.0
