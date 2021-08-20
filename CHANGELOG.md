@@ -1,5 +1,9 @@
 # Changelog
 
+## v0.5.3 - 2021-08-20
+
+* Improve edge-case error reporting by adding `LockError.unknown(message: String)` case.
+
 ## v0.5.2 - 2021-08-19
 
 * Fix "Unauthorized Bluetooth use" error reporting

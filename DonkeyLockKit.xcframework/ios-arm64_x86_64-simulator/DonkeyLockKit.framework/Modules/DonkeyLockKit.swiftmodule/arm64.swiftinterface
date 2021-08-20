@@ -108,6 +108,7 @@ public enum LockError : Swift.Error, Swift.Equatable {
   case outOfCommands
   case fullTimeout
   case offlineDuringPickup
+  case unknown(message: Swift.String)
   public static func == (a: DonkeyLockKit.LockError, b: DonkeyLockKit.LockError) -> Swift.Bool
 }
 public struct CasePath<Root, Value> {
