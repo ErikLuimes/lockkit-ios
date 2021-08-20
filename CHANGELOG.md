@@ -1,5 +1,10 @@
 # Changelog
 
+## v0.5.4 - 2021-08-20
+
+* Fix an internal bluetooth manager wouldn't be properly initialized on
+`LockKit.initializeSDK(apiToken:)` call.
+
 ## v0.5.3 - 2021-08-20
 
 * Improve edge-case error reporting by adding `LockError.unknown(message: String)` case.
