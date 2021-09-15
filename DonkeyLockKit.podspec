@@ -1,6 +1,6 @@
 Pod::Spec.new do |spec|
   spec.name          = 'DonkeyLockKit'
-  spec.version       = '0.5.4'
+  spec.version       = '1.0.0'
   spec.license      = {
     :type => 'Copyright',
     :text => <<-LICENSE

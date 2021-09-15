@@ -1,5 +1,15 @@
 # Changelog
 
+## v1.0.0 - 2021-09-15
+
+### API Changes
+
+* (Renamed) `LockKit.initializeSDK(apiToken:onResult:)` -> 
+`LockKit.initializeSDK(sdkToken:onResult:)`
+* Fixed an issue where eKey wouldn't be properly cleared on `LockKit.finalizeLock`
+* Fixed an issue where calling `LockKit.finalizeLock` during an ongoing lock action would
+  prevent the ongoing action result from being delivered
+
 ## v0.5.4 - 2021-08-20
 
 * Fix an internal bluetooth manager wouldn't be properly initialized on
