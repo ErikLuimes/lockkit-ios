@@ -1,5 +1,9 @@
 # Changelog
 
+## v1.0.2 - 2021-11-01
+
+* Added `BLEError.unknownManagerState` case
+
 ## v1.0.1 - 2021-11-01
 
 * Improved logging for `CBManagerState`
