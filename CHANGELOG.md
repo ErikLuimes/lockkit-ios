@@ -1,5 +1,9 @@
 # Changelog
 
+## v1.0.1 - 2021-11-01
+
+* Improved logging for `CBManagerState`
+
 ## v1.0.0 - 2021-09-15
 
 ### API Changes
