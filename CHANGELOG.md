@@ -1,5 +1,9 @@
 # Changelog
 
+## v1.1.0 - 2021-11-10
+
+* Implemented waiting for `CBCentralManager` to transition into a known state during `initializeSDK`
+
 ## v1.0.2 - 2021-11-01
 
 * Added `BLEError.unknownManagerState` case
