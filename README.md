@@ -10,14 +10,6 @@ Donkey Lock Kit is a Swift iOS framework that enables interaction with
 BLE-enabled locks that [Donkey Republic](https://donkey.bike) vehicles are
 equipped with.
 
-# Disclaimer
-
-This is the beta version of the framework. It is intended for 3rd parties to
-evaluate the APIs and test the integration with Donkey Republic locks. It is
-not suitable for integration in production environments. The APIs contained in
-this release may change before the official release.
-
-
 ## Prerequisites
 
 Donkey Lock Kit APIs are available after you authenticated with the API token
