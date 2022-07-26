@@ -1,5 +1,9 @@
 # Changelog
 
+## v1.1.1 - 2022-07-25
+
+* Expose methods for setting `LogLevel` and `ServerEnvironment` individually
+
 ## v1.1.0 - 2021-11-10
 
 * Implemented waiting for `CBCentralManager` to transition into a known state during `initializeSDK`
